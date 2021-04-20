@@ -1,0 +1,68 @@
+div span p
+span -> Inline Element
+p -> above below padding and block level
+div -> block Level element 
+
+https://www.freecodecamp.org/news/learn-bootstrap-4-in-30-minute-by-building-a-landing-page-website-guide-for-beginners-f64e03833f33/
+
+https://htmldog.com/guides/html/beginner/paragraphs/
+https://stackoverflow.com/questions/16434706/what-is-the-difference-between-p-div-and-span-in-htmlxhtml
+https://javascript.plainenglish.io/10-popular-angular-ui-libraries-to-try-in-2021-5a24c8aaa902
+https://stackblitz.com/
+
+https://medium.com/stackblitz-blog/stackblitz-online-vs-code-ide-for-angular-react-7d09348497f4
+https://medium.com/swlh/top-5-ui-library-for-angular-f975e4831126
+https://codepen.io/pen/
+
+https://medium.com/computed-comparisons/commonjs-vs-amd-vs-requirejs-vs-es6-modules-2e814b114a0b
+
+
+https://www.youtube.com/watch?v=HNH15tWCsFQ&list=PLXtpcihA0VhlNTr3RNdNOaDREGMKrNc30 [TS]
+https://www.youtube.com/watch?v=BfbE937RBlY  [Typescript]
+
+https://www.youtube.com/watch?v=8KQYogIzRq4
+
+https://www.youtube.com/c/Codevolution/playlists
+
+Destructing {}
+export 
+import {}
+class 
+
+let var const
+
+Decorators
+tsconfig.json
+
+SystemJs is Universal Dynamic Loader of Modules
+Lazy Loading of Modules- "On Demand"
+https://www.youtube.com/watch?v=nQGhdoIMKaM
+
+TS = ES5 + ES6 + ES7 + Features
+TS - Mistakes , unit Testing, Type safety
+Typescript : Type Inference
+var x = 10;
+var x :  number
+var a: number = 10;
+var a:number;
+https://www.youtube.com/watch?v=4FMVgV2nJsU&list=PLC3y8-rFHvwhI0V5mE9Vu6Nm-nap8EcjV&index=42
+[TS]
+
+
+https://www.youtube.com/watch?v=ozhe__GdWC8&t=347s
+Proxy vs Reverse Proxy{LB}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

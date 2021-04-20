@@ -1,0 +1,194 @@
+https://www.youtube.com/watch?v=AaNZBrP26LQ [Academind Angular 2 Hours]
+https://www.youtube.com/watch?v=T_Fe4IaG0KU [LCO]
+------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/14727044/typescript-difference-between-string-and-string [JS Object vs TS Type]
+string -> TS type
+String -> JS object
+var a: string = 'test'; // string literal
+var b: String = new String('another test'); // string wrapper object
+console.log(typeof a); // string
+console.log(typeof b); // object
+
+https://stackoverflow.com/questions/49699067/property-has-no-initializer-and-is-not-definitely-assigned-in-the-construc
+instance property
+static property
+array Type
+
+prototype
+------------------------------------------------------------------------------------------
+TypeScript - Data Modifiers
+public private protected - TypeScript
+TypeScript treats properties and methods as public by default if no modifier is applied to them.
+------------------------------------------------------------------------------------------
+https://www.tutorialsteacher.com/typescript/abstract-class
+abstract class  Person {
+	abstract find(string)
+	display(name: string): void{}
+}
+
+class Employee extends Person
+------------------------------------------------------------------------------------------
+
+let isPresent:boolean = true;
+------------------------------------------------------------------------------------------
+class Employee {
+    public empName: string;
+    protected empCode: number;
+	private department: string
+	}
+------------------------------------------------------------------------------------------
+Constructor is AntiPattern  in Angular
+Use Lifecycle Methods in Angular
+------------------------------------------------------------------------------------------
+https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
+------------------------------------------------------------------------------------------
+
+Just go to tsconfig.json and set
+
+"strictPropertyInitialization": false
+to get rid of the compilation error.
+
+Otherwise you need to initialize all your variables which is a little bit annoying
+--------------------------------------------------------------------------------------------------
+
+https://angular.io -> Docs, Resources
+
+angular.io -> Setup [Don't use "Getting Started"]
+
+npm install -g @angular/cli
+
+ng command - is coming from @angular/cli
+
+ng help 
+help Lists available commands and their short descriptions.
+#new,  version, help, serve, test, build, add, deploy, lint
+ng new youtube-ang
+
+cd youtube-ang
+
+code .
+
+ng serve --open
+http://localhost:4200/
+
+ng serve --port=4201
+ng serve --port=4201 --open
+
+src
+package.json
+angular.json
+"options": {
+            "outputPath": "dist/youtube-ang",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          },
+		  
+
+src -> index.html   ->   "app-root"	  
+<body>
+	<app-root>
+	</app-root>
+</body>
+		  
+-------------------------------------------------------------------------------------------------------------
+https://blog.thoughtram.io/angular/2015/08/11/angular-2-template-syntax-demystified-part-1.html
+
+https://stackoverflow.com/questions/35944749/what-is-the-difference-between-parentheses-brackets-and-asterisks-in-angular2
+[] - Property binding One-way from data source to view target. eg
+
+{{expression}}
+[target]="expression"
+bind-target="expression"
+We can use bind- instead of []
+
+() -> Event Binding One-way from view target to data source
+
+(target)="statement"
+on-target="statement"
+We can use on- instead of ()
+
+[()]- Two way Binding Banana in a box
+
+[(target)]="expression"
+bindon-target="expression"
+We can use bindon- instead of [()]		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ng generate component xyz
+
+
+
+
+
+
+
+
+
+
+

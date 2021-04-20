@@ -1,0 +1,14 @@
+https://www.youtube.com/watch?v=sVYlv78IY8o [Harry Wolff]
+https://www.youtube.com/watch?v=BwuLxPH8IDs [AcadeMind]
+
+npm install -g typescript
+tsc
+tsc --help
+
+$ tsc --init
+message TS6071: Successfully created a tsconfig.json file.
+
+touch index.ts
+
+https://www.youtube.com/watch?v=T_Fe4IaG0KU  [Angular Crash Course]
+

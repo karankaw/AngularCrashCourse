@@ -1,0 +1,29 @@
+Abhishek - Backend
+
+Vinayak - CSS + Bootstrap
+
+Data Flow - DB - Namita
+
+What I need to do ?
+
+Annotator
+Reviewer
+3rd component - Drag drop
+
+    https://dev.azure.com/GenpactDigitalEngineering/_git/CORA_AI_ORION   Access
+	Assets Vinayak Babhalgaonkar - CSS - XD
+
+Dashboard-- Common Annotator, Reviewer****
+
+Cora Design
+------------------------------------------------
+ng new 
+
+angular cli
+
+new component
+
+2 Components on each page 
+
+
+Route Page 

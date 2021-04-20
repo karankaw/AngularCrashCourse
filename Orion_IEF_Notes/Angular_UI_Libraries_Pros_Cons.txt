@@ -1,0 +1,30 @@
+>>>>CORA_AI Design System – Overview https://designsys.azurewebsites.net/login.php
+Pros
+• UI would be up and quick easily because Angular is Out of picture for now
+• -----Proven/Approved-----------
+Cons
+• HTML + CSS + Jquery/JS - Dom Manipulation -> Not Preferred! (No directives there)
+• Heavy lifting for making it in "Angular-ish" - Componentisation [.TS] 
+• Prior Angular Knowledge after UI is up
+• CSS Customisation Needed still -  from `Vinayak` (XD)
+------------------------------------------------------------------------------------------------------------
+>>>>Prime NG + Only CSS from Cora AI Design Library (Pick and Choose) - MIT License
+-------------Swamy Patil/Tanveer-------Approval.
+Pros
+• Angular Component Out of Box
+• HUGE Library of components - No competitor comes close
+Cons
+• CSS Customisation Needed - from `Vinayak` (XD) or   Cora AI Library Styles
+• Prior Angular Knowledge before getting started to use readymade components
+------------------------------------------------------------------------------------------------------------
+>>>>2 More Libraries
+1) Angular Material - Google (Not Much Choices of components/Less Theme options)
+2) Ng-Bootstrap (Bootstrap 4 and Angular 5+ , No explicit Jquery dependency, Responsive out of box since its bootstrap)
+
+https://ng-bootstrap.github.io/#/components/accordion/examples
+https://ng-bootstrap.github.io/#/components/modal/examples
+https://ng-bootstrap.github.io/#/components/table/overview
+
+
+https://stackoverflow.com/questions/43394193/difference-between-ngx-bootstrap-and-ng2-bootstrap
+https://stackoverflow.com/questions/43758400/what-is-the-difference-between-ng-bootstrap-and-ngx-bootstrap
