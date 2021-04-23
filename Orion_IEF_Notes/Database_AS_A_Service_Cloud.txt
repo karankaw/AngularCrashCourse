@@ -1,0 +1,6 @@
+https://logz.io/blog/azure-vs-aws/
+Amazon AWS RDS
+Azure 
+Amazon’s dedicated DBaaS for relational databases is Relational Database Service (RDS) while SQL Database is Microsoft’s equivalent service. 
+Database Engines
+RDS supports six database engines, Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle, and Microsoft SQL Server whereas SQL Database is a service exclusively based on Microsoft SQL Server.

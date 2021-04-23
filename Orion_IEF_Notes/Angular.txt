@@ -100,8 +100,7 @@ src -> index.html   ->   "app-root"
 	<app-root>
 	</app-root>
 </body>
-		  
--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 https://blog.thoughtram.io/angular/2015/08/11/angular-2-template-syntax-demystified-part-1.html
 
 https://stackoverflow.com/questions/35944749/what-is-the-difference-between-parentheses-brackets-and-asterisks-in-angular2
@@ -122,10 +121,65 @@ We can use on- instead of ()
 
 [(target)]="expression"
 bindon-target="expression"
-We can use bindon- instead of [()]		  
-		  
-		  
-		  
+We can use bindon- instead of [()]		
+-------------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/50232874/angular-6-migration-angular-cli-json-to-angular-json
+https://blog.bitsrc.io/how-to-use-jquery-with-angular-when-you-absolutely-have-to-42c8b6a37ff9
+https://stackoverflow.com/questions/38855891/angular-cli-webpack-how-to-add-or-bundle-external-js-files
+https://therichpost.com/angular-8-custom-accordion-working-example/
+
+
+npm install jquery --save
+
+"scripts": ["node_modules/jquery/dist/jquery.js"]   ---------> angular.json file
+
+import * as $ from 'jquery'; --------> in ComponentName.component.ts
+
+
+-------------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/50169680/difference-between-ng-add-package-name-vs-npm-install-package-name-in-angula
+ng add
+Will use your package manager to download new dependencies and invoke an installation script which can update your project with configuration changes (In angular.json file as well), add additional dependencies (e.g. polyfills if needed), or scaffold package-specific initialization code.
+
+For example you run the command ng add @angular/material — Install, it will automatically install the package and configure in angular.json file too.
+
+npm install
+Whereas npm install <package> will only install your package into your project but will not configure in order to use.
+
+For example you run the command npm install jquery it will install jQuery in your project but you need to configure manually in .angular-cli.json file (as in v5)
+
+For more information read out here -
+
+https://blog.angular.io/version-6-of-angular-now-available-cc56b0efa7a4
+
+-------------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/50169680/difference-between-ng-add-package-name-vs-npm-install-package-name-in-angula
+ng add vs npm install
+
+
+-------------------------------------------------------------------------------------------------
+ng generate component
+-------------------------------------------------------------------------------------------------
+@Injectable vs @Input vs @Output
+The @Input() decorator in a child component or directive signifies that the property can receive its value from its parent component.
+@Output() marks a property in a child component as a doorway through which data can travel from the child to the parent.
+-------------------------------------------------------------------------------------------------
+Component Life Cycle
+-------------------------------------------------------------------------------------------------
+https://angular.io/guide/strict-mode
+To create a new workspace and application using the strict mode, run the following command:
+ng new [project-name] --strict
+
+To create a new application in the strict mode within an existing non-strict workspace, run the following command:
+ng generate application [project-name] --strict
+-------------------------------------------------------------------------------------------------		  
+https://www.c-sharpcorner.com/article/learn-angular-8-step-by-step-in-10-days-data-binding-day-3/
+Different Types of Data Binding
+Interpolation                             {{}}    <span>User Name : {{userName}}</span> 
+Property-Based Binding           []      <input type=”text” [value]=”data.name”/> 
+Event Binding                              ()     <input type="submit" value="Submit" (click)="fnSubmit()">  
+Two-Way Binding		              [()]   <input type=”text” [(ngModel)] =”firstName”/> 
+-------------------------------------------------------------------------------------------------		  
 		  
 		  
 		  

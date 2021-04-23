@@ -1,1 +1,275 @@
 Components | Directives | Templates | Dependency Injection
+Observables | Form | @Input @Output | Inject| Dependency Injection| 
+Service| Httpclient | Template Syntax| NgModel|NG Lifecycle
+EventEmitter | [ngStyle] |  ? : |[(ngModel)] |
+--------------------------------------------------------------------------------
+https://angular.io/guide/template-reference-variables#template-variables
+
+Template input variables and template variables
+
+A template input variable is a variable you can reference within a single instance of the template. You declare a template input variable using the let keyword as in let hero.
+
+In contrast, you declare a template variable by prefixing the variable name with #, as in #var. A template variable refers to its attached element, component, or directive.
+--------------------------------------------------------------------------------
+https://angular.io/guide/template-reference-variables#how-angular-assigns-values-to-template-variables
+
+How Angular assigns values to template variables
+Angular assigns a template variable a value based on where you declare the variable:
+
+If you declare the variable on a component, the variable refers to the component instance.
+If you declare the variable on a standard HTML tag, the variable refers to the element.
+If you declare the variable on an <ng-template> element, the variable refers to a TemplateRef instance, which represents the template. For more information on <ng-template>, see How Angular uses the asterisk, *, syntax in Structural directives.
+If the variable specifies a name on the right-hand side, such as #var="ngModel", the variable refers to the directive or component on the element with a matching exportAs name.
+--------------------------------------------------------------------------------
+https://angular.io/guide/two-way-binding#how-two-way-binding-works
+How two-way binding works
+
+export class SizerComponent {
+
+  @Input()  size: number | string;
+  @Output() sizeChange = new EventEmitter<number>();
+
+  dec() { this.resize(-1); }
+  inc() { this.resize(+1); }
+
+  resize(delta: number) {
+    this.size = Math.min(40, Math.max(8, +this.size + delta));
+    this.sizeChange.emit(this.size);
+  }
+}
+
+
+<div>
+  <button (click)="dec()" title="smaller">-</button>
+  <button (click)="inc()" title="bigger">+</button>
+  <label [style.font-size.px]="size">FontSize: {{size}}px</label>
+</div>
+
+
+<app-sizer [(size)]="fontSizePx"></app-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>
+
+
+fontSizePx = 16;
+
+
+<app-sizer [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-sizer>
+
+--------------------------------------------------------------------------------
+https://angular.io/guide/template-reference-variables
+
+<input #ref1 type="text" [(ngModel)]="firstExample" />
+<span *ngIf="true">Value: {{ ref1.value }}</span>
+
+
+<input *ngIf="true" #ref2 type="text" [(ngModel)]="secondExample" />
+<span>Value: {{ ref2?.value }}</span> <!-- doesn't work -->
+
+--------------------------------------------------------------------------------
+NgModel
+TWO-WAY BINDING IN FORMS
+Because no native HTML element follows the x value and xChange event pattern, two-way binding with form elements requires NgModel. For more information on how to use two-way binding in forms, see Angular NgModel.
+
+--------------------------------------------------------------------------------
+Structural directive shorthand
+The asterisk, *, syntax on a structural directive, such as *ngIf, is shorthand that Angular interprets into a longer form. 
+Angular transforms the asterisk in front of a structural directive into an <ng-template> that surrounds the host element and its descendants
+
+<div *ngIf="hero" class="name">{{hero.name}}</div>
+becomes
+<ng-template [ngIf]="hero">
+	<div class="name">{{}}</div>
+</ng-template>
+--------------------------------------------------------------------------------
+https://angular.io/guide/template-statements
+<button (click)="deleteHero()">Delete hero</button>
+--------------------------------------------------------------------------------
+* Shorthand for structural directive
+https://angular.io/guide/structural-directives#shorthand
+--------------------------------------------------------------------------------
+<div *ngIf="hero" class="name">{{hero.name}}</div>
+INTO
+<ng-template [ngIf]="hero">
+  <div class="name">{{hero.name}}</div>
+</ng-template>
+
+<div *ngFor="let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.odd]="odd">
+  ({{i}}) {{hero.name}}
+</div>
+--------------------------------------------------------------------------------
+<ng-template ngFor let-hero [ngForOf]="heroes" let-i="index" let-odd="odd" [ngForTrackBy]="trackById">
+  <div [class.odd]="odd">({{i}}) {{hero.name}}</div>
+</ng-template>
+--------------------------------------------------------------------------------
+https://angular.io/guide/structural-directives#structural-directive-syntax-reference
+
+*:prefix="( :let | :expression ) (';' | ',')? ( :let | :as | :keyExp )*"
+
+--------------------------------------------------------------------------------
+Creating template fragments with <ng-template>
+Angular's <ng-template> element defines a template that doesn't render anything by default. With <ng-template>, you can render the content manually for full control over how the content displays.
+
+If there is no structural directive and you wrap some elements in an <ng-template>, those elements disappear. In the following example, Angular does not render the middle "Hip!" in the phrase "Hip! Hip! Hooray!" because of the surrounding <ng-template>.
+
+src/app/app.component.html (template-tag)
+content_copy
+<p>Hip!</p>
+<ng-template>
+  <p>Hip!</p>
+</ng-template>
+<p>Hooray!</p>
+--------------------------------------------------------------------------------
+https://angular.io/guide/property-binding
+Binding to a property
+To bind to an element's property, enclose it in square brackets, [], which identifies the property as a target property. A target property is the DOM property to which you want to assign a value. For example, the target property in the following code is the image element's src property.
+
+src/app/app.component.html
+content_copy
+<img [src]="itemImageUrl">
+In most cases, the target name is the name of a property, even when it appears to be the name of an attribute. In this example, src is the name of the <img> element property.
+
+The brackets, [], cause Angular to evaluate the right-hand side of the assignment as a dynamic expression. Without the brackets, Angular treats the right-hand side as a string literal and sets the property to that static value.
+
+src/app.component.html
+content_copy
+<app-item-detail childItem="parentItem"></app-item-detail>
+Omitting the brackets renders the string parentItem, not the value of parentItem.
+--------------------------------------------------------------------------------
+Binding to events
+To bind to an event you use the Angular event binding syntax. This syntax consists of a target event name within parentheses to the left of an equal sign, and a quoted template statement to the right. In the following example, the target event name is click and the template statement is onSave().
+
+Event binding syntax
+content_copy
+<button (click)="onSave()">Save</button>
+The event binding listens for the button's click events and calls the component's onSave() method whenever a click occurs.
+----------------------------------------------------------------------------------------------------
+Toggling button functionality
+To disable a button's functionality depending on a Boolean value, bind the DOM disabled property to a property in the class that is true or false.
+
+src/app/app.component.html
+content_copy
+<!-- Bind button disabled state to `isUnchanged` property -->
+<button [disabled]="isUnchanged">Disabled Button</button>
+Because the value of the property isUnchanged is true in the AppComponent, Angular disables the button.
+
+src/app/app.component.ts
+content_copy
+isUnchanged = true;
+--------------------------------------------------------------------------------
+#VarName is template variable
+It can be referenced in template or in the component itself.
+
+https://itnext.io/working-with-angular-5-template-reference-variable-e5aa59fb9af
+
+A template reference variable is often a reference to a DOM element within a template. It can also be a reference to an Angular component or directive or a web component (Read more at Angular.io). That means you can easily access the variable anywhere in the template.
+
+<input type="text" #firstNameInput>
+<input type="text" #lastNameInput>
+After that, you can access the variable anywhere inside the template. For example, I pass the variable as a parameter on an event.
+<button (click)="show(lastNameInput)">Show</button>
+
+show(lastName: HTMLInputElement){
+    console.log(lastName.value);
+}
+Usually, the reference variable can only be accessed inside the template. 
+
+However, you can use ViewChild decorator to reference it inside your component.
+
+import {ViewChild, ElementRef} from '@angular/core';
+
+// Reference firstNameInput variable inside Component
+@ViewChild('firstNameInput') nameInputRef: ElementRef;
+
+After that, you can use this.nameInputRef anywhere inside your Component.
+
+show(lastName: HTMLInputElement){
+  this.fullName = this.nameInputRef.nativeElement.value + ' ' + lastName.value;
+}
+--------------------------------------------------------------------------------
+https://angular.io/guide/inputs-outputs
+
+<p>
+  Today's item: {{item}}
+</p>
+
+import { Component, Input } from '@angular/core'; // First, import Input
+export class ItemDetailComponent {
+  @Input() item: string; // decorate the property with @Input()
+}
+-------------------------------------------------------------------------------------------
+Attribute Binding vs Property Binding 
+Attribute Binding
+https://angular.io/guide/attribute-binding#attribute-class-and-style-bindings
+
+Property Binding 
+https://angular.io/guide/property-binding#binding-to-a-property
+-----------------------------------------------------------------------------------------------
+Attribute Binding --> https://angular.io/guide/attribute-binding
+
+<p [attr.attribute-you-are-targeting]="expression"></p>
+When the expression resolves to null or undefined, Angular removes the attribute altogether.
+
+<!-- create and set an aria attribute for assistive technology -->
+<button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+
+Example
+<span [attr.colspan]="1+1">One-Two</span>
+
+<!-- create and set an aria attribute for assistive technology -->
+<button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+-------------------------------------------------------------------------------------------
+Binding to the class attribute
+https://angular.io/guide/attribute-binding#binding-to-the-class-attribute
+
+Binding to a single CSS class
+To create a single class binding, use the prefix class followed by a dot and the name of the CSS class—for example, [class.sale]="onSale". Angular adds the class when the bound expression, onSale is truthy, and it removes the class when the expression is falsy—with the exception of undefined
+
+Binding to multiple CSS classes
+To bind to multiple classes, use [class] set to an expression—for example, [class]="classExpression". The expression can be one of:
+
+A space-delimited string of class names.
+An object with class names as the keys and truthy or falsy expressions as the values.
+An array of class names.
+-------------------------------------------------------------------------------------------
+Binding to the style attribute
+https://angular.io/guide/attribute-binding#binding-to-the-style-attribute
+
+To create a single style binding, use the prefix style followed by a dot and the name of the CSS style property—for example, [style.width]="width"
+
+You can write a style property name in either dash-case, or camelCase.
+<nav [style.background-color]="expression"></nav>
+<nav [style.backgroundColor]="expression"></nav>
+
+Binding to multiple styles
+https://angular.io/guide/attribute-binding#binding-to-multiple-styles
+For multiple styles, bind to the [style] attribute—for example, [style]="styleExpression". The styleExpression can be one of:
+
+A string list of styles such as "width: 100px; height: 100px; background-color: cornflowerblue;".
+An object with style names as the keys and style values as the values, such as {width: '100px', height: '100px', backgroundColor: 'cornflowerblue'}.
+Note that binding an array to [style] is not supported.
+-------------------------------------------------------------------------------------------
+ngstyle
+https://angular.io/guide/built-in-directives#ngstyle
+
+
+https://angular.io/guide/built-in-directives#adding-and-removing-classes-with-ngclass
+-------------------------------------------------------------------------------------------
+Many NgModules such as the RouterModule and the FormsModule define their own attribute directives. The most common attribute directives are as follows:
+
+NgClass—adds and removes a set of CSS classes.
+NgStyle—adds and removes a set of HTML styles.
+NgModel—adds two-way data binding to an HTML form element.
+-------------------------------------------------------------------------------------------
+ngModel
+https://angular.io/guide/built-in-directives#displaying-and-updating-properties-with-ngmodel
+-------------------------------------------------------------------------------------------
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+
+condition ? exprIfTrue : exprIfFalse
+condition
+An expression whose value is used as a condition.
+exprIfTrue
+An expression which is evaluated if the condition evaluates to a truthy value (one which equals or can be converted to true).
+exprIfFalse
+An expression which is executed if the condition is falsy (that is, has a value which can be converted to false).
+-------------------------------------------------------------------------------------------
