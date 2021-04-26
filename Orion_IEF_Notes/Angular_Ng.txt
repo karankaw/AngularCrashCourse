@@ -9,6 +9,11 @@ EventEmitter | [ngStyle] |  ? : |[(ngModel)] |Bind values between components
 |Structural  Directives (Shorthand)
 |Built-in Directives
 |Custom Structual Directive  | Custom Attribute Directive 
+Services | Angular Dependency Injection |Observables/Subscribe
+Rxjs
+https://www.youtube.com/watch?v=AaNZBrP26LQ   Maximilian Schwarzmuller
+https://www.youtube.com/playlist?list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ    [Codevolution]
+Java Brains Youtube
 --------------------------------------------------------------------------------
 https://angular.io/guide/template-reference-variables#template-variables
 
@@ -654,3 +659,32 @@ content_copy
 The <parent-component> serves as the context for the <child-component>.
 
 @Input() and @Output() give a child component a way to communicate with its parent component. @Input() allows a parent component to update data in the child component. Conversely, @Output() allows the child to send data to a parent component.
+
+
+---------------------------------------------------------------------
+Without a setter , a property is supposed to be readonly
+Without Access Specifier, a property is supposed to be PUBLIC
+---------------------------------------------------------------------
+https://www.youtube.com/watch?v=vj0kUzKOgGQ   [Angular Tutorial - 20 - HTTP and Observables]
+https://www.youtube.com/watch?v=LmIsbzt-S_E [Angular Tutorial - 21 - Fetch Data Using HTTP]
+
+https://angular-2-training-book.rangle.io/di/angular2/inject_and_injectable [Injectable Inject]
+@Injectable- is a decorator with No argument - Decorator Applies to Class - This Class can  be used/Fed/Injected as a dependency by Angular Injectors
+@Inject - is a decorator with argument - Decorator Applies inside the constructor parameter
+
+@Inject() is a manual mechanism for letting Angular know that a parameter must be injected. 
+constructor(@Inject(ChatWidget) private chatWidget) { }
+
+---------------------------------------------------------------------
+import { HttpClientModule } from '@angular/common/http';
+import {Observable} from 'rxjs/observable'
+
+https://www.positronx.io/angular-7-httpclient-http-service/amp/
+https://www.youtube.com/watch?v=vj0kUzKOgGQ   [Angular Tutorial - 20 - HTTP and Observables]
+https://www.youtube.com/watch?v=LmIsbzt-S_E [Angular Tutorial - 21 - Fetch Data Using HTTP]
+https://angular-2-training-book.rangle.io/di/angular2/inject_and_injectable [Injectable Inject]
+---------------------------------------------------------------------
+For Mock You can use JSON File
+and use HttpClientModule
+
+---------------------------------------------------------------------

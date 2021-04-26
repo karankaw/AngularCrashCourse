@@ -1,0 +1,121 @@
+https://www.stackchief.com/blog/ngOnChanges%20Example%20%7C%20Angular
+child.component.ts
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `
+    <a (click)="changeFromChild()">Change from child</a>
+    <br/>
+    {{parentData}}
+  `	
+})
+export class ChildComponent implements OnInit {
+  @Input() parentData: any;
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  changeFromChild(){
+    this.parentData -= 1;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+  }
+}
+parent.component.ts
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: `
+    <a (click)="changeFromParent()">Change from parent</a>
+    <br/>
+    <app-child [parentData]=data></app-child>
+  `
+})
+export class ParentComponent implements OnInit {
+  data = 0
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  changeFromParent(){
+    this.data += 1;
+  }
+}
+ngOnChanges() will fire before ngOnInit() and every time parentDatais updated from its parent component.
+
+ngOnChanges() takes a changes argument of type SimpleChanges.
+
+changeFromChild() won't call ngOnChanges()
+
+changeFromParent() will call ngOnChanges()
+
+When ngOnChanges() is called, this example simply logs the SimpleChanges instance.
+
+The SimpleChanges instance looks like this...
+
+class SimpleChange {
+  constructor(previousValue: any, currentValue: any, firstChange: boolean)
+  previousValue: any
+  currentValue: any
+  firstChange: boolean
+  isFirstChange(): boolean
+}
+Every time ngOnChanges() is called, the SimpleChanges instance captures the parentData's:
+
+previousValue
+currentValue
+firstChange (true the first time ngOnChanges is called)
+Here is the SimpleChange object our example logs:
+
+ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+}
+
+
+//console output
+{
+  parentData: { currentValue: 1, firstChange: false, previousValue: 0 }
+}
+What about multiple inputs?
+Each bound variable is returned with its corresponding SimpleChanges instance in a single object.
+
+//SimpleChanges object with multiple inputs
+{
+  parentData: { currentValue: 1, firstChange: false, previousValue: 0 },
+  firstName: { currentValue: "Sam", firstChange: false, previousValue: "Eric" },
+  age: { currentValue: 25, firstChange: false, previousValue: 20 }
+}
+ngOnChanges vs ngOnInit
+ngOnInit gets called only once when the component is initialized.
+
+ngOnChanges gets called before ngOnInit and whenever a component's bound input is changed FROM THE PARENT COMPONENT.
+
+Remember that ngOnChanges is specific to bound inputs on the component. This means if you don't have any @Input properties on a child, ngOnChanges will never get called.
+
+ngOnInit is specific to the component being initialized. ngOnChanges is specific to @Input properties on a child component.
+
+When should you use ngOnChanges?
+Use ngOnChanges whenever you want to detect changes from a variable decorated by @Input. Remember that only changes from the parent component will trigger this function.
+
+Also remember that changes from the parent still update the child value even without implementing ngOnChanges. ngOnChanges simply adds the benefit of tracking those changes with previous and current value.
+
+--------------------------------------------------------------------------------------------------------------
+https://angular.io/guide/inputs-outputs
+
+Consider the following hierarchy:
+
+content_copy
+<parent-component>
+  <child-component></child-component>
+</parent-component>
+The <parent-component> serves as the context for the <child-component>.
+
+@Input() and @Output() give a child component a way to communicate with its parent component. @Input() allows a parent component to update data in the child component. Conversely, @Output() allows the child to send data to a parent component.

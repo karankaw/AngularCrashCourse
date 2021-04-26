@@ -1,0 +1,50 @@
+Adding and removing classes with NgClass
+For SingleClass-prefer "Class Binding"   [class]
+
+
+
+
+
+Binding to the class attribute - https://angular.io/guide/attribute-binding#binding-to-the-class-attribute
+You can use class binding to add and remove CSS class names from an element's class attribute.
+
+[class.sale]="onSale"      
+ Angular adds the class when "onSale" is truthy, and it removes the class when the expression is falsy
+ 
+[class]="classExpression"
+ To bind to multiple classes, use [class]
+ --------------------------------------------------
+ https://www.w3schools.com/tags/tag_fieldset.asp
+ Fieldset makes a border around Form Elements and groups them
+ <form>
+	<fieldset>
+	</fieldset>
+ </form>
+ --------------------------------------------------
+ngModel
+Import FormsModule and add it to the NgModule's imports list.
+
+import { FormsModule } from '@angular/forms'; // <--- JavaScript import from Angular
+/* . . . */
+@NgModule({
+/* . . . */
+
+  imports: [
+    BrowserModule,
+    FormsModule // <--- import into the NgModule
+  ],
+/* . . . */
+})
+export class AppModule { }
+--------------------------------------------------
+#
+ngModel
+ngClass  vs     class
+ngStyle  vs     style
+service 
+Injector
+
+Built-in Attributes  vs Property Binding
+
+Custom Attributes
+--------------------------------------------------
