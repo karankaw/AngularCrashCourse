@@ -1,7 +1,14 @@
 Components | Directives | Templates | Dependency Injection
 Observables | Form | @Input @Output | Inject| Dependency Injection| 
 Service| Httpclient | Template Syntax| NgModel|NG Lifecycle
-EventEmitter | [ngStyle] |  ? : |[(ngModel)] |
+EventEmitter | [ngStyle] |  ? : |[(ngModel)] |Bind values between components
+|Union Type - Typescript | @ViewChild decorator[ to reference it inside your component.]
+|Directives : 
+|ng lifecyle : onInit , onChange
+|Glossary - Angular - https://angular.io/guide/glossary#glossary
+|Structural  Directives (Shorthand)
+|Built-in Directives
+|Custom Structual Directive  | Custom Attribute Directive 
 --------------------------------------------------------------------------------
 https://angular.io/guide/template-reference-variables#template-variables
 
@@ -204,6 +211,26 @@ https://angular.io/guide/attribute-binding#attribute-class-and-style-bindings
 Property Binding 
 https://angular.io/guide/property-binding#binding-to-a-property
 -----------------------------------------------------------------------------------------------
+Property Binding --- HTML property (not attribute)
+https://angular.io/guide/property-binding#binding-to-a-property
+
+Setting an element property to a component property value
+<img [src]="itemImageUrl">                                //src/app/app.component.html
+itemImageUrl = '../assets/phone.png';            //src/app/app.component.ts
+-------------------------------
+<!-- src/app/app.component.html-->
+<!-- Bind button disabled state to `isUnchanged` property -->
+<button [disabled]="isUnchanged">Disabled Button</button>
+
+<!-- src/app/app.component.ts -->
+isUnchanged = true;
+-------------------------------
+To bind to an element's property, enclose it in square brackets, [], which identifies the property as a target property.
+In most cases, the target name is the name of a property, even when it appears to be the name of an attribute. In this example, src is the name of the <img> element property.
+
+The brackets, [], cause Angular to evaluate the right-hand side of the assignment as a dynamic expression. Without the brackets, Angular treats the right-hand side as a string literal and sets the property to that static value.
+
+-----------------------------------------------------------------------------------------------
 Attribute Binding --> https://angular.io/guide/attribute-binding
 
 <p [attr.attribute-you-are-targeting]="expression"></p>
@@ -231,10 +258,59 @@ A space-delimited string of class names.
 An object with class names as the keys and truthy or falsy expressions as the values.
 An array of class names.
 -------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+--------------------"Attribute, class, and style bindings"--------------------
+
+Binding to an attribute
+[attr.colspan]="1 + 1"
+
+Binding ARIA attributes [ARIA =  Accessible Rich Internet Application - standard] 
+"aria-" Prefix
+<button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+
+Binding to multiple CSS classes
+[class]="classExpression"
+Binding to the class attribute
+[class.sale]="onSale"
+
+Binding to multiple styles
+[style]="styleExpression" 
+Binding to a single style
+<nav [style.background-color]="expression"></nav>
+
+-------------------------------------------------------------------------------------------
+Property Bindings - Attribute, class, and style bindings
+https://stackblitz.com/angular/njoyxqbyjgx?file=src%2Fapp%2Fapp.component.html
+//HTML
+<!-- The `class.special` binding overrides any value for the `special` class in `classExpression`.  -->
+<div [class.special]="isSpecial" [class]="classExpression">Some text.</div>
+<!-- The `style.color` binding overrides any value for the `color` property in `styleExpression`.  -->
+<div [style.color]="color" [style]="styleExpression">Some text.</div>
+
+//TS
+export class AppComponent {
+  actionName = 'Go for it';
+  isSpecial = true;
+  canSave = true;
+  classExpression = 'special clearance';
+  styleExpression = 'color: red';
+  color = 'blue';
+}
+//CSS
+.special {
+  background-color: #1976d2;
+  color: #ffffff;
+}
+.clearance {
+  border: 2px solid #d41e2e;
+
+}
+
+-------------------------------------------------------------------------------------------
 Binding to the style attribute
 https://angular.io/guide/attribute-binding#binding-to-the-style-attribute
 
-To create a single style binding, use the prefix style followed by a dot and the name of the CSS style property—for example, [style.width]="width"
+To create a single style binding, use the prefix "style" followed by a dot and the name of the CSS style property—for example, [style.width]="width"
 
 You can write a style property name in either dash-case, or camelCase.
 <nav [style.background-color]="expression"></nav>
@@ -248,21 +324,6 @@ A string list of styles such as "width: 100px; height: 100px; background-color: 
 An object with style names as the keys and style values as the values, such as {width: '100px', height: '100px', backgroundColor: 'cornflowerblue'}.
 Note that binding an array to [style] is not supported.
 -------------------------------------------------------------------------------------------
-ngstyle
-https://angular.io/guide/built-in-directives#ngstyle
-
-
-https://angular.io/guide/built-in-directives#adding-and-removing-classes-with-ngclass
--------------------------------------------------------------------------------------------
-Many NgModules such as the RouterModule and the FormsModule define their own attribute directives. The most common attribute directives are as follows:
-
-NgClass—adds and removes a set of CSS classes.
-NgStyle—adds and removes a set of HTML styles.
-NgModel—adds two-way data binding to an HTML form element.
--------------------------------------------------------------------------------------------
-ngModel
-https://angular.io/guide/built-in-directives#displaying-and-updating-properties-with-ngmodel
--------------------------------------------------------------------------------------------
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
 
 condition ? exprIfTrue : exprIfFalse
@@ -273,3 +334,323 @@ An expression which is evaluated if the condition evaluates to a truthy value (o
 exprIfFalse
 An expression which is executed if the condition is falsy (that is, has a value which can be converted to false).
 -------------------------------------------------------------------------------------------
+Bind values between components
+https://angular.io/guide/property-binding#bind-values-between-components
+
+-------------------------------------------------------------------------------------------
+"Union Type Syntax"===>Multiple Type on same TS type
+https://howtodoinjava.com/typescript/union-types/
+
+Union Type Syntax
+As said earlier, use pipe symbol between "multiple types" which variable can support.
+
+Union Type Syntax
+let myVar : string | number;    //myVar can store string and number types
+Union Type Example
+Let’s see an example of typescript union types.
+
+Union Type Example
+let myVar : string | number;        //Variable with union type declaration
+ 
+myVar = 100;            //OK
+myVar = 'Lokesh';     //OK
+ 
+myVar = true;           //Error - boolean not allowed
+Here, the myVar variable can hold both number and string, which allows us to have the flexibility to use both data types.
+
+The TypeScript compiler makes sure that it alerts us if we try to assign a type of value that was not defined.
+
+NG Lifecycle Hooks
+https://angular.io/guide/glossary#lifecycle-hook
+An interface that allows you to tap into the lifecycle of directives and components as they are created, updated, and destroyed.
+
+Each interface has a single hook method whose name is the interface name prefixed with ng. For example, the OnInit interface has a hook method named ngOnInit.
+
+Angular calls these hook methods in the following order:
+
+ngOnChanges: When an input/output binding value changes.
+ngOnInit: After the first ngOnChanges.
+ngDoCheck: Developer's custom change detection.
+ngAfterContentInit: After component content initialized.
+ngAfterContentChecked: After every check of component content.
+ngAfterViewInit: After a component's views are initialized.
+ngAfterViewChecked: After every check of a component's views.
+ngOnDestroy: Just before the directive is destroyed.
+-------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/50753628/what-is-the-difference-between-angular-ngoninit-and-ngonchanges
+https://www.freecodecamp.org/news/angular-lifecycle-hooks/
+
+How a form need be setup
+
+0. Static design Html markup should hold how the design is structured and laid out. Any permanent classes are to be applied directly in markup.
+
+1. Constructor
+Setup dependencies, like services, providers, configuration etc. These enable the component to manage itself along with interact with other elements.
+
+2. Initializer (ngOnInit)
+Populates form elements like dropdowns etc when their values are to be retrieved from external source, rather than being known at design time. This is to be done once only to setup the initial rendering of the form
+
+3. Input changes (ngOnChanges)
+Runs on every change on any input, and perform any action which gets triggered by that particular control. For example, if there are multiple inputs and on any validation failure on a single one, you need to focus on the failed control and disable all others, you can do it here. Useful for validation logic.
+Not to be used to handle other control's layout and structure.
+This often runs recursively if one control impacts others so logic has to be carefully designed.
+If you want to prevent this from running, you can disable the Angular change detection and manually handle the state yourself.
+
+4. Control's event handlers Here you take in the final value of the control and use it to perform manipulation of other controls in the form. As soon as you change the value of other controls, the ngOnChanges event fires again.
+-------------------------------------------------------------------------------------------
+https://angular.io/guide/built-in-directives#built-in-directives
+The different types of Angular directives are as follows:
+
+Components—directives with a template. This type of directive is the most common directive type. [ example ------>    @Component]
+Attribute directives—directives that change the appearance or behavior of an element, component, or another directive. [ example ------>   ngModel, ngClass, ngStyle]
+Structural directives—directives that change the DOM layout by adding and removing DOM elements.   [example ------> *ngFor, *ngIf]
+-----------------------------------------------------------------------------------------------
+https://angular.io/guide/built-in-directives#built-in-structural-directives
+Built-in structural directives
+Structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, and manipulating the host elements to which they are attached.
+
+This section introduces the most common built-in structural directives:
+
+NgIf—conditionally creates or disposes of subviews from the template.
+NgFor—repeat a node for each item in a list.
+NgSwitch—a set of directives that switch among alternative views
+-------------------------------------------------------------------------------------------
+Structural Directive - ngIf
+<div *ngIf="hero" class="name">{{hero.name}}</div>
+BECOMES EQUAL TO
+<ng-template [ngIf]="hero">
+  <div class="name">{{hero.name}}</div>
+</ng-template>
+------------------------------------------------------------------------------------------
+Structural Directive - ngFor "HTML Element"
+https://angular.io/guide/built-in-directives#listing-items-with-ngfor
+
+<div *ngFor="let item of items">{{item.name}}</div>
+
+Listing items with NgFor
+You can use the NgFor directive to present a list of items.
+
+Define a block of HTML that determines how Angular renders a single item.
+To list your items, assign the short hand let item of items to *ngFor.
+-------------------------------------------------------------------------------------------
+Structural-Directives - *ngFor  (Shorthand)
+https://angular.io/guide/structural-directives#structural-directive-shorthand
+<div *ngFor="let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.odd]="odd">
+  ({{i}}) {{hero.name}}
+</div>
+BECOMES EQUAL TO
+<ng-template ngFor let-hero [ngForOf]="heroes" let-i="index" let-odd="odd" [ngForTrackBy]="trackById">
+  <div [class.odd]="odd">({{i}}) {{hero.name}}</div>
+</ng-template>
+-------------------------------------------------------------------------------------------
+Structural-Directives - ngFor "Component"
+https://angular.io/guide/built-in-directives#repeating-a-component-view
+
+To repeat a component element, apply *ngFor to the selector. 
+
+src/app/app.component.html
+<app-item-detail *ngFor="let item of items" [item]="item"></app-item-detail>
+See here "app-item-detail" is not some HTML , Its a selector , it can any valid Name
+
+
+
+------------------------------------------------------------------------------------------------------
+Attribute Directives
+Many NgModules such as the RouterModule and the FormsModule define their own attribute directives. The most common attribute directives are as follows:
+
+NgClass—adds and removes a set of CSS classes.
+NgStyle—adds and removes a set of HTML styles.
+NgModel—adds two-way data binding to an HTML form element.
+
+ngstyle
+Setting inline styles with NgStyle
+https://angular.io/guide/built-in-directives#ngstyle
+
+ngClass
+https://angular.io/guide/built-in-directives#adding-and-removing-classes-with-ngclass
+
+ngModel
+https://angular.io/guide/built-in-directives#displaying-and-updating-properties-with-ngmodel
+
+  <input type="checkbox" name="isDone" [(ngModel)]="item.isDone"/>
+   <input type="text" class="input-text" placeholder="Type a todo" 
+  [(ngModel)]="todoValue"/>
+  
+  export class AppComponent {
+  title = 'Project CC';
+  todoValue: string;
+  list: Todo[];
+
+  ngOnInit() {
+    this.list = [];
+    this.todoValue = ""
+  }
+------------------------------------------------------------------------------------------
+Glossary Angular
+https://angular.io/guide/glossary#glossary
+------------------------------------------------------------------------------------------
+@Input  :::::::::  DATA_FLOW from Parent to Child
+@Input property is defined in Child - but value to it come from Parent HTML Template
+//PARENT.Component.Html
+<label for"Parent">Inside Parent Component</label>
+<child-selector-in-parent     [parentData]="somePropertyinParentComponentTS">
+</<child-selector-in-parent>
+//Parent.Component.TS
+export class ParentComponent{
+	somePropertyinParentComponentTS :string = "Parent Sends Data to Child"
+}
+
+
+//Child.Component.html
+<br/>
+    {{parentData}}
+<br/>
+//Child.Component.TS
+@Component(){
+}
+export class ChildComponent implements OnChanges{
+@Input
+parentData: String
+ngOnChanges():void{
+console.log("Value Changed in Parent, Detected by Child")
+}
+
+}
+
+//Even if Child does not implement ngOnChanges, It will still get Input value from parent
+------------------------------------------------------------------------------------------
+@Output  ::::::   DATA_FLOW from Child to Parent 
+
+The @Output() decorator in a child component or directive allows data to flow from the child to the parent.
+https://angular.io/guide/inputs-outputs
+------------------------------------------------------------------------------------------
+In TypeScript, each member is public by default.
+------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------
+Pipe "JSON"
+{{currentClasses | json}}
+------------------------------------------------------------------------------------------
+https://www.stackchief.com/blog/ngOnChanges%20Example%20%7C%20Angular
+child.component.ts
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `
+    <a (click)="changeFromChild()">Change from child</a>
+    <br/>
+    {{parentData}}
+  `	
+})
+export class ChildComponent implements OnInit {
+  @Input() parentData: any;
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  changeFromChild(){
+    this.parentData -= 1;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+  }
+}
+parent.component.ts
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: `
+    <a (click)="changeFromParent()">Change from parent</a>
+    <br/>
+    <app-child [parentData]=data></app-child>
+  `
+})
+export class ParentComponent implements OnInit {
+  data = 0
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  changeFromParent(){
+    this.data += 1;
+  }
+}
+ngOnChanges() will fire before ngOnInit() and every time parentDatais updated from its parent component.
+
+ngOnChanges() takes a changes argument of type SimpleChanges.
+
+changeFromChild() won't call ngOnChanges()
+
+changeFromParent() will call ngOnChanges()
+
+When ngOnChanges() is called, this example simply logs the SimpleChanges instance.
+
+The SimpleChanges instance looks like this...
+
+class SimpleChange {
+  constructor(previousValue: any, currentValue: any, firstChange: boolean)
+  previousValue: any
+  currentValue: any
+  firstChange: boolean
+  isFirstChange(): boolean
+}
+Every time ngOnChanges() is called, the SimpleChanges instance captures the parentData's:
+
+previousValue
+currentValue
+firstChange (true the first time ngOnChanges is called)
+Here is the SimpleChange object our example logs:
+
+ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+}
+
+
+//console output
+{
+  parentData: { currentValue: 1, firstChange: false, previousValue: 0 }
+}
+What about multiple inputs?
+Each bound variable is returned with its corresponding SimpleChanges instance in a single object.
+
+//SimpleChanges object with multiple inputs
+{
+  parentData: { currentValue: 1, firstChange: false, previousValue: 0 },
+  firstName: { currentValue: "Sam", firstChange: false, previousValue: "Eric" },
+  age: { currentValue: 25, firstChange: false, previousValue: 20 }
+}
+ngOnChanges vs ngOnInit
+ngOnInit gets called only once when the component is initialized.
+
+ngOnChanges gets called before ngOnInit and whenever a component's bound input is changed FROM THE PARENT COMPONENT.
+
+Remember that ngOnChanges is specific to bound inputs on the component. This means if you don't have any @Input properties on a child, ngOnChanges will never get called.
+
+ngOnInit is specific to the component being initialized. ngOnChanges is specific to @Input properties on a child component.
+
+When should you use ngOnChanges?
+Use ngOnChanges whenever you want to detect changes from a variable decorated by @Input. Remember that only changes from the parent component will trigger this function.
+
+Also remember that changes from the parent still update the child value even without implementing ngOnChanges. ngOnChanges simply adds the benefit of tracking those changes with previous and current value.
+
+--------------------------------------------------------------------------------------------------------------
+https://angular.io/guide/inputs-outputs
+
+Consider the following hierarchy:
+
+content_copy
+<parent-component>
+  <child-component></child-component>
+</parent-component>
+The <parent-component> serves as the context for the <child-component>.
+
+@Input() and @Output() give a child component a way to communicate with its parent component. @Input() allows a parent component to update data in the child component. Conversely, @Output() allows the child to send data to a parent component.

@@ -7,7 +7,8 @@ import { Todo } from "./todo";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent { 
+
   title = 'Project CC';
   todoValue: string;
   list: Todo[];

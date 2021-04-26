@@ -11,4 +11,168 @@ message TS6071: Successfully created a tsconfig.json file.
 touch index.ts
 
 https://www.youtube.com/watch?v=T_Fe4IaG0KU  [Angular Crash Course]
+---------------------------------------------------------------------------------------------
+TypeScript Playground - https://www.typescriptlang.org/play
+Always use "TypeScript Playground" for 
+	Conversion of TS into JS
+	Excecute as JS in browser
+	You can import modules in TS as you type code in online editor
+	See Logs
+	See Errors etc
+---------------------------------------------------------------------------------------------
+All JS parameters are by default optional
+But Typescript is mandatory by default unless we make it optional
+Optional Parameters always placed after Mandatory parameters
+---------------------------------------------------------------------
+https://www.typescriptlang.org/docs/handbook/2/classes.html
+Very useful - Typescript URL
+---------------------------------------------------------------------
+https://www.typescriptlang.org/docs/handbook/functions.html#optional-and-default-parameters
+https://www.typescriptlang.org/docs/handbook/2/functions.html
+Optional and Default Parameters
+In TypeScript, every parameter is assumed to be required by the function.
+ In short, the number of arguments given to a function has to match the number of parameters the function expects.
+ ---------------------------------------------------------------------
+ Parameter Properties
+ https://www.typescriptlang.org/docs/handbook/2/classes.html#parameter-properties
+ https://www.stevefenton.co.uk/2013/04/stop-manually-assigning-typescript-constructor-parameters/
+ https://kendaleiv.com/typescript-constructor-assignment-public-and-private-keywords
+ 
+ TypeScript offers special syntax for turning a constructor parameter into a class property with the same name and value. These are called parameter properties and are created by prefixing a constructor argument with one of the visibility modifiers public, private, protected, or readonly. The resulting field gets those modifier(s):
+
+class Params {
+  constructor(
+    public readonly x: number,
+    protected y: number,
+    private z: number
+  ) {
+    // No body necessary
+  }
+}
+const a = new Params(1, 2, 3);
+console.log(a.x);
+             
+(property) Params.x: number
+console.log(a.z);
+Property 'z' is private and only accessible within class 'Params'.
+---------------------------------------------------------------------
+vscode Shortcut:::getter setter
+https://stackoverflow.com/questions/47731392/does-typescript-have-auto-properties-yet/55729025#55729025
+press prop+TAB in vsCode
+---------------------------------------------------------------------
+abstract
+https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members
+An abstract method or abstract field is one that hasn’t had an implementation provided. These members must exist inside an abstract class, which cannot be directly instantiated.
+abstract class Base {
+  abstract getName(): string;
+
+  printName() {
+    console.log("Hello, " + this.getName());
+  }
+}
+
+const b = new Base();
+Cannot create an instance of an abstract class.
+---------------------------------------------------------------------
+readonly
+https://www.typescriptlang.org/docs/handbook/2/classes.html#readonly
+Fields may be prefixed with the readonly modifier. This prevents assignments to the field outside of the constructor.
+
+class Greeter {
+  readonly name: string = "world";
+
+  constructor(otherName?: string) {
+    if (otherName !== undefined) {
+      this.name = otherName;
+    }
+  }
+
+  err() {
+    this.name = "not ok";
+Cannot assign to 'name' because it is a read-only property.
+  }
+}
+const g = new Greeter();
+g.name = "also not ok";
+Cannot assign to 'name' because it is a read-only property.
+---------------------------------------------------------------------
+Optional Parameters
+https://www.typescriptlang.org/docs/handbook/2/functions.html#optional-parameters
+https://www.typescriptlang.org/docs/handbook/functions.html#optional-and-default-parameters
+In TypeScript by marking the parameter as optional with ?:
+
+function f(x?: number) {
+  // ...
+}
+f(); // OK
+f(10); // OK
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Very Interesting Use-Case   :   Typescript    vs     JS
+https://www.typescriptlang.org/play?ts=4.2.3#code/JYWwDg9gTgLgBAbzgeQHYElXHgXzgMyghDgHIABAQ1QHMBXAG0qgHoBjaAU1IG4AoPmyYBnYXAAKnKMIioAjIj5xlcDqmEwodNjGgAKMFGAA3SjE4EAcpRCcAXHA1HaAGjhg6AIwbA2cBta2Dk7AtACUiipwOHwxgiJiktKyAEyRKmpO2rpQeviB9o6aoTRuATaFIeHpyjFxQpSiElIyqADMcKBgDJy2qDBiaJjYNe5GpuZWFcHFtPxRhiZmFuVBRc40AlGZmtn6ixMW+MDSMKjT6yVuB8v+jWcXVTQRCEpRKjAAFsDCAHT5FTgAF4CCcNOdbPN3sovj9fqsLCCRA9IVsVDEorQhlgYHowg5jBBgAATUZRL5EADucFQnGpAFEoERcqQALKcL4QUmoCDwLo9PrmYm-UhhKG1ASxIA
+............................................................................................................................................................................................
+TYPESCRIPT																																					   .JS
+
+import { OnInit } from '@angular/core';																								class Person1 {
+                                                                                                                                                                                    constructor(fName, lName) {
+class Person1 {                                                                                                                                                          this.fName = fName;
+    constructor(private fName: string, public lName: string) {                                                                this.lName = lName; 
+    }                                                                                                                                                                               } 
+}                                                                                                                                                                               } 
+............................................................................................................................................................................................                                                                                                                                                                                
+class Person2 {                       																															class Person2 {                                                                                                                           
+    constructor(fName: string, lName: string) {                                                                                         constructor(fName, lName) {
+    }                                                                                                                                                                               } 
+}                                                                                                                                                                                }  
+............................................................................................................................................................................................                                                                                                                                                                                 
+class Person3 implements OnInit {                                                                                                           class Person3 { 
+    private fName: string;                                                                                                                                   constructor(firstname, lastname) {
+    private lName: string                                                                                                                                         this.firstname = firstname;
+                                                                                                                                                                                        this.lastname = lastname;
+    constructor(private firstname: string, private lastname: string) {                                                  this.fName = firstname;
+        this.fName = firstname;                                                                                                                                this.lName = lastname; 
+        this.lName = lastname;                                                                                                                              } 
+                                                                                                                                                                                
+    }                                                                                                                                                                          
+    ngOnInit(): void {                                                                                                                                              ngOnInit() { 
+        throw new Error('Method not implemented.');                                                                                   throw new Error('Method not implemented.');  
+    }                                                                                                                                                                                } 
+                                                                                                                                                                                  }  
+}                                                                                                                                                                                 export {}; 
+---------------------------------------------------------------------
+Typescript for getter Setter
+
+getter and setter actually is a special function inside Class
+But when we try to use it, It actually is used as a property 
+
+class A{
+get name(){}
+}
+var objA = new A()
+objA.name  // See Its not called as a function although its defined as one  // See no parenthesis
+
+
+https://www.typescriptlang.org/play?#code/MYGwhgzhAEDC0G8BQTrQA4CcCWA3MALgKbQD6IRAdgOYEAWAXNBATjatAPScYCuARiGzBolMAFsiTFm2odgAe0ozewAgswAKCpWmtsNADR9Bw0RKnN9NaAF5oAcgASC8A4CUiDmnrYIAOnIqWjo7aB1vLh5fALFJMIAiF3AEjgBfDmoiAnDg+k13PVkvNDRMbN5MSmgYwJ0Q-3UAVXR0IkxYSCIC9I4IbNyafPwQXiJPZFKauj86vND7EbHezIHSOO7Cq2LJ0vKCSurajcaFFraOrp60DLR+nPWLTQ2JyOOLMI3ejKR8TGgRJ8iAB3OCaBwANXaAE9oAAZJTUDxIRTKVxEfwgBTUTTATHzdwopQQdGY7G4wIvIloihknF4l5AA
+---------------------------------------------------------------------
+Without a setter , a property is supposed to be readonly
+Without Access Specifier, a property is supposed to be PUBLIC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
