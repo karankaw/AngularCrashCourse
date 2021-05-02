@@ -1,0 +1,14 @@
+Error: StaticInjectorError(AppModule)[ExpansionStepsExample -> Number]:
+StaticInjectorError(Platform: core)[ExpansionStepsExample -> Number]:
+NullInjectorError: No provider for Number!
+
+
+
+ERROR
+Error: StaticInjectorError(AppModule)[ExpansionStepsExample -> Number]:
+StaticInjectorError(Platform: core)[ExpansionStepsExample -> Number]:
+NullInjectorError: No provider for Number!
+Unable to display error. Open your browser's console to view.
+Error: StaticInjectorError(AppModule)[ExpansionStepsExample -> Number]:
+StaticInjectorError(Platform: core)[ExpansionStepsExample -> Number]:
+NullInjectorError: No provider for Number!

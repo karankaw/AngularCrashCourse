@@ -1,0 +1,36 @@
+npm audit
+npm audit fix
+
+npm update @angular/cli -g   
+
+
+npm install --save-dev @angular/cli@latest
+
+npm install --save-dev @angular-devkit/build-angular@0.1102.10
+
+npm outdated
+
+=========================================================
+https://stackblitz.com/
+https://dev.azure.com/GenpactDigitalEngineering/CORA_AI_Intelligent_Extraction_Engine/_git/CORA_AI_IEF_GUI
+https://xd.adobe.com/view/ddb46a3c-1294-4393-5dc4-5f23e0157b55-ab85/
+https://primefaces.org/primeng/showcase/#/setup
+https://itnext.io/fixing-security-vulnerabilities-in-npm-dependencies-in-less-than-3-mins-a53af735261d
+https://dev.to/bbenefield89/fixing-npm-dependencies-vulnerabilities-6p8
+https://update.angular.io/
+https://stackoverflow.com/questions/44502779/how-to-find-my-angular-version-in-my-project
+https://docs.npmjs.com/about-semantic-versioning
+https://michaelsoolee.com/npm-package-tilde-caret/
+https://semver.npmjs.com/
+https://update.angular.io/?l=3&v=10.0-11.0
+https://stackoverflow.com/questions/52176881/this-version-of-cli-is-only-compatible-with-angular-version-5-0-0-or-higher-erro
+https://www.thecodebuzz.com/this-version-of-cli-is-only-compatible-with-angular-version-or-but-found-instead/
+https://nodesource.com/blog/semver-tilde-and-caret/
+https://stackoverflow.com/questions/30037808/multiline-editing-in-visual-studio-code
+https://stackoverflow.com/questions/44525746/global-angular-cli-version-greater-than-local-version/44526528
+https://stackoverflow.com/questions/61222467/angular-9-ngcc-fails-with-an-unhandled-exception
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import { DocumentService } from 'src/app/services/Document/document.service';
+document-preview.component.ts
+C:\IEF\CORA_AI_IEF_GUI\cora-ai-annotator-ui\src\app\components\document-preview\document-preview.component.ts

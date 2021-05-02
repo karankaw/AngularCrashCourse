@@ -1,0 +1,48 @@
+https://stackblitz.com/edit/web-platform-vslvsr?file=script.js
+https://sabe.io/classes/css/pseudo-classes-elements#what-are-pseudo-elements
+https://getbootstrap.com/docs/4.6/components/collapse/#accordion-example
+https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.js
+https://getbootstrap.com/docs/4.6/utilities/visibility/
+https://www.sitepoint.com/community/t/using-nth-class-on-nested-div/205663
+https://www.w3schools.com/css/css_combinators.asp
+https://sabe.io/classes/css/grouping-nesting-selectors
+https://css-tricks.com/almanac/selectors/d/descendant/#:~:text=Descendant%20means%20anywhere%20nested%20within,the%20next%20nested%20level%20down.
+https://css-tricks.com/multiple-class-id-selectors/
+https://www.w3schools.com/cssref/sel_firstchild.asp
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_firstchild
+https://www.w3schools.com/jquery/jquery_ref_html.asp
+https://www.w3schools.com/jquery/jquery_ref_html.asp
+-----------------------------------------------------------------------------------------------
+//"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+
+  // "node_modules/primeflex/primeflex.css"
+  
+       "src/styles.css",
+	   
+	   #25A5BD
+	   
+	   https://negliadesign.com/ask-a-designer/whats-the-difference-between-pms-cmyk-rgb-and-hex
+	   https://www.w3schools.com/css/css_comments.asp
+	   Comments in CSS,  Use only  /* */
+	   // Allowed in CSS 
+	   
+	   https://stackoverflow.com/questions/63511379/how-to-set-primeng-theme
+	   
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+https://github.com/primefaces/primeng/blob/master/src/app/components/accordion/accordion.ts
+
+C:\IEF\CORA_AI_IEF_GUI\cora-ai-annotator-ui\node_modules\primeng\accordion[d.ts]
+
+https://stackoverflow.com/a/54240522/2413870
+https://stackoverflow.com/questions/17493738/what-is-a-typescript-map-file/17493808#17493808
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+  "src/styles.css",
+                "node_modules/primeng/resources/themes/nova-light/theme.css", 👈
+                "node_modules/primeng/resources/primeng.min.css",
+                "node_modules/primeflex/primeflex.css",
+                "node_modules/primeicons/primeicons.css",
+                "node_modules/quill/dist/quill.snow.css"
+-------------------------------------------------------------------------------------------------------------------------------------------
