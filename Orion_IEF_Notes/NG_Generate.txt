@@ -1,0 +1,6 @@
+ng generate 
+ng g <schematic> --dry-run=false --flat=false
+
+if we cd to a director , NG Command makes all schematics there itself.
+
+https://angular.io/cli/generate

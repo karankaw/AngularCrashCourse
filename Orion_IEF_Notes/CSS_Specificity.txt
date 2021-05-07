@@ -1,0 +1,88 @@
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_vertical_menu_scroll
+https://www.w3schools.com/howto/howto_css_vertical_menu.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_vertical_menu
+--------------------------------------------------------------------------------------------------
+https://www.w3schools.com/howto/howto_css_sidebar_icons.asp
+<div class="sidebar">
+  <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
+  <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+</div>
+--------------------------------------------------------------------------------------------------
+https://www.w3schools.com/cssref/pr_class_display.asp
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_display
+--------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The nav element</h1>
+
+<p>The nav element defines a set of navigation links:</p>
+
+<head>
+<style type="text/css">
+a {
+ display: block;
+}
+li { display:block; background-color:grey; margin: 2px;}
+ul{width:100px}
+</style>
+</head>
+<nav>
+<ul>
+<li><a href="/html/">HTML</a> </li>
+<li><a href="/css/">CSS</a> </li>
+<li><a href="/js/">JavaScript</a> </li>
+<li><a href="/python/">Python</a></li>
+</ul>
+</nav>
+
+</body>
+</html>
+
+--------------------------------------------------------------------------------------------------
+!important 
+CSS Specificity 
+https://stackoverflow.com/questions/9459062/in-which-order-do-css-stylesheets-override
+https://www.w3schools.com/css/css_important.asp
+https://www.w3schools.com/css/tryit.asp?filename=trycss_important
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+
+.gray {
+  background-color: gray !important ;
+}
+
+.blue {
+  background-color: blue;
+}
+
+p {
+  background-color: yellow  ;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<p class="blue gray">This is some text in a paragraph.</p>
+
+<p class="gray blue">This is some text in a paragraph.</p>
+
+<p class="blue">This is some text in a paragraph.</p>
+
+<p class="gray">This is some text in a paragraph.</p>
+
+<p >This is some text in a paragraph.</p>
+
+</body>
+</html>
+--------------------------------------------------------------------------------------------------

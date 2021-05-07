@@ -1,0 +1,1 @@
+<li> display:block makes it clickable like <a> which is nested in it

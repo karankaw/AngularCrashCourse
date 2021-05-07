@@ -1,0 +1,2 @@
+find . -name 'abc*' -delete
+https://stackoverflow.com/questions/58263621/how-to-remove-file-from-folder-and-subfolder-single-command-linux

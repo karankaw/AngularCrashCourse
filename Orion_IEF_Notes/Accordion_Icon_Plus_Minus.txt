@@ -1,0 +1,14 @@
+https://stackoverflow.com/questions/48082465/how-to-remove-arrow-icon-on-accordion-panel-headers-using-primeng
+
+.someStyleClass.ui-accordion {
+  .ui-accordion-header {
+    span.fa {
+      display: none;
+    }
+  }
+}
+
+
+.someStyleClass.ui-accordion .ui-accordion-header span.fa {
+  display: none;
+}

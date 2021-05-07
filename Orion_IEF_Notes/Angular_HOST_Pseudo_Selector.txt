@@ -1,0 +1,10 @@
+
+https://stackoverflow.com/questions/50566274/difference-between-hostng-deep-class-and-class-hostng-deep/50567098
+
+:host::ng-deep .p-accordion-header {
+  display: flex !important;
+  justify-content: space-between;
+}
+
+Basically You check Actual DOM and then get to selector of element
+

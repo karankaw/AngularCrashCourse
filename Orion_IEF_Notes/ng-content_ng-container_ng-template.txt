@@ -1,0 +1,26 @@
+ng-template : This and his children not displayed , This is used to bypass *Structural Attribute limitation
+ng-container : this tag does not get displayed, however its children doo get displayed
+ng-content : Content being asked from Parent template
+
+ng-content should be in child component template and its parent should not be a ROOT Component
+https://stackoverflow.com/questions/32568808/component-with-ng-content
+
+https://www.freecodecamp.org/news/everything-you-need-to-know-about-ng-template-ng-content-ng-container-and-ngtemplateoutlet-4b7b51223691/   [V IMP]
+https://joshblf.medium.com/wtf-is-ng-content-8382b2a664e1 
+https://codeburst.io/angular-interview-question-what-are-ng-container-ng-content-and-ng-template-9fafbbc255d5
+
+//NGContentDemo
+app.component.html
+<div class="g-box g-header">
+I_am_a_Buttons_Name_being_passed_from_NonRoot_Parent
+</div>
+
+header.component.html
+<button><ng-content></ngcontent></button>
+
+@Component(
+selector : '.g-box.g-header',
+templateUrl: './header.component.html' 
+)
+export class HeaderComponent{}
+

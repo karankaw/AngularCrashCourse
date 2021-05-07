@@ -1,0 +1,6 @@
+https://stackoverflow.com/questions/48248832/stylesheet-not-loaded-because-of-mime-type
+
+Stylesheet not loaded because of MIME-type
+
+
+check if style.css or styles.css

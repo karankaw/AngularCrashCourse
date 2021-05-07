@@ -1,0 +1,9 @@
+<app-sizer [(size)]="fontSizePx"></app-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>
+
+
+Model to View ---- Property Binding 
+Event Binding ---- View to Model 
+
+
+https://angular.io/guide/two-way-binding

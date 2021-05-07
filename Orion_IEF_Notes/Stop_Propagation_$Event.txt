@@ -1,0 +1,16 @@
+https://stackoverflow.com/questions/51962227/primeng-accordion-header-button
+https://stackoverflow.com/questions/53701738/prevent-expand-on-click-on-prime-ng-accordion
+<p-accordion>
+    <p-accordionTab header="Godfather I" [selected]="true">
+        <p-header>
+            <span>Godfather I
+              <input type="checkbox" (click)="onClick($event)">
+            </span>
+        </p-header>
+        Some Text
+    </p-accordionTab>
+</p-accordion>
+
+
+https://stackoverflow.com/questions/36960241/difference-between-click-and-onclick
+

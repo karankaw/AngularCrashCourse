@@ -1,0 +1,17 @@
+https://www.w3schools.com/cssref/css3_pr_overflow-y.asp
+
+https://www.w3schools.com/cssref/pr_dim_line-height.asp
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_line-height
+
+
+https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM
+
+:host
+https://angular.io/guide/component-styles
+
+Angular :host, :host-context, ::ng-deep - Angular View Encapsulation
+How does Angular Style Isolation work? Emulated View Encapsulation
+https://blog.angular-university.io/angular-host-context/   [IMP]
+
+https://ngrefs.com/latest/styling/host-selector
+https://blog.thoughtram.io/angular/2015/06/29/shadow-dom-strategies-in-angular2.html

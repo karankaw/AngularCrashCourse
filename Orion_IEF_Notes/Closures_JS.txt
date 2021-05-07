@@ -1,0 +1,3 @@
+https://www.w3schools.com/js/js_function_closures.asp
+
+Closures are javascript function which hold onto the variables in parent scope (IIFE) and are called to modify them and return them.

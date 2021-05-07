@@ -1,0 +1,46 @@
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_unit_em
+https://www.w3schools.com/cssref/css_units.asp
+https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+html{
+font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 2em;
+}
+
+div {
+  font-size: 30px;
+  border: 1px solid black;
+}
+
+span:nth-of-type(2) {
+  font-size: 1rem;
+}
+span {
+font-size: 0.5em ;
+}
+
+</style>
+</head>
+<body>
+Hmm
+<p>These paragraphs have a calculated line-height of: 2x16px = 32px.</p>
+<p>These paragraphs have a calculated line-height of: 2x16px = 32px.</p>
+<p>These paragraphs have a calculated line-height of: 2x16px = 32px.</p>
+<div>
+ <span>The span element inside the div element has a font-size of 0.5em, which equals to 0.5x30 = 15px</span><br/>
+<span>The span element inside the div element has a font-size of 1rem, which equals to 1x50 = 50px</span>
+
+</div>
+  
+
+</body>
+</html>

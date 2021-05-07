@@ -1,0 +1,29 @@
+https://www.w3schools.com/cssref/pr_pos_z-index.asp
+
+z-index is a CSS property that applies to Positioned elements
+z-index specifies stack order Z-axis view
+
+The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an element with a lower stack order.
+
+This is useful in Modal Windows, Logo , Background 
+1 Window above all !!!
+
+img {
+position: absolute;
+left: 0px;
+top: 0px;
+z-index: -1;
+}
+
+Positioned elements is where position is not static
+Z-Index works with positioned elements
+Z-index does not accept non-integer values
+
+By default position is "static" 
+
+Positioned Elements - Higher the number, Higher Floor they are in, the more Visible they are
+Static Elements - Natural - If other elements have -1 as z-index it will be visible
+
+https://www.youtube.com/watch?v=qblxToPBY7Y   [Useful, Imp]
+https://www.smashingmagazine.com/2009/09/the-z-index-css-property-a-comprehensive-look/

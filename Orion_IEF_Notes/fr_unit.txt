@@ -1,0 +1,51 @@
+Introduction
+With CSS Grid Layout, we get a new flexible unit: the Fr unit. Fr is a fractional unit and 1fr is for 1 part of the available space. The following are a few examples of the fr unit at work. The grid items in these examples are placed onto the grid with grid areas.
+
+https://css-tricks.com/introduction-fr-css-unit/
+https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/
+https://www.digitalocean.com/community/tutorials/css-css-grid-layout-fr-unit
+https://www.hongkiat.com/blog/css-grid-layout-fr-unit/
+https://gridbyexample.com/examples/
+https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/
+https://digital.gov/guides/mobile-principles/viewport/
+
+https://gridbyexample.com/examples/      [V V Imp]
+https://gridbyexample.com/patterns/header-twocol-footer-responsive/
+https://codepen.io/rachelandrew/pen/ZKaXGM?editors=1100
+
+"fr" only available in CSSGRID 
+
+To reiterate, VH stands for “viewport height”, which is the viewable screen’s height. 100VH would represent 100% of the viewport’s height, or the full height of the screen. 
+
+  /* this is the same as grid-template-rows: 300px 300px; */
+  grid-template-rows: repeat(2, 300px);
+
+<div class="cards">
+  <div class="card">ONE</div>
+  <div class="card">TWO</div>
+  <div class="card">THREE</div>
+  <div class="card">FOUR</div>
+  <div class="card">FIVE</div>
+  <div class="card">SIX</div>
+  <div class="card">SEVEN</div>
+  <div class="card">EIGHT</div>
+  <div class="card">NINE</div>
+  <div class="card">TEN</div>
+  <div class="card">ELEVEN</div>
+  <div class="card">TWELVE</div>
+</div>
+@media (min-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+{
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-column-gap: 10px;
+}
+
+grid-template-columns: repeat(4, 1fr);

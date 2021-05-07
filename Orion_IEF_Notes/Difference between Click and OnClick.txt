@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/36960241/difference-between-click-and-onclick
+
+onclick
+click

@@ -1,0 +1,67 @@
+https://github.com/primefaces/primeng/issues/8596
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<p-accordionTab style="background-color:rgb(37, 165, 189)">
+	<p-header style="border:1px solid pink;width: 100%; display: flex;justify-content: space-between;">
+                    <span style="line-height: 2.5">Project 1</span>
+                    <span>
+                        <button pButton type="button" icon="pi pi-upload" class="p-button-outlined border" label="Upload Documents">
+                        </button>
+                    </span>
+              </p-header>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  styles: [
+  `
+    :host ::ng-deep button {
+      margin-right: .5em;
+    }
+  `
+  ,
+  `
+    :host ::ng-deep p-header {
+      border:1px solid gray;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  `
+  ,
+],
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<div class="title">
+    <span>Cumulative performance</span>
+    <span>20/02/2011</span>
+</div>
+
+
+ div.container {
+     display: flex;
+     justify-content: space-between;
+   }
+  
+
+   https://stackoverflow.com/questions/5067279/how-to-align-this-span-to-the-right-of-the-div
+   
+   primeflex.css
+   .p-jc-between {
+  justify-content: space-between;
+}
+
+
+  .p-d-flex {
+  display: flex !important;
+}
+
+.p-d-flex   .p-jc-between
+
+p-d-flex   p-jc-between
+[ngClass]="{ 'p_d_flex': isEnabled, 'p_jc_between': isEnabled}"
+
+[ngClass]="{ bold: isBold, strike: isStrike
+[class.highlighted]="isHighlighted">
+
+https://www.telerik.com/blogs/ng-class-ngclass#toc_7
+
+[class.p-d-flex ]=true [class.p-jc-between ]=true
+
+{ p-d-flex: isEnabled,  p-jc-between: isEnabled}
+

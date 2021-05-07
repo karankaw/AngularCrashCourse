@@ -1,0 +1,22 @@
+primeflex 
+PrimeFlex is a lightweight flex based responsive grid optimized for mobile phones, tablets and desktops
+https://www.primefaces.org/primeng/showcase/#/primeflex/
+https://www.primefaces.org/primeng/showcase/#/primeflex/
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout
+CSS Grid (Grid) vs Flexbox(Flex)
+
+
+ul ---- No Bullet in li
+ol ---- Bullet in li
+
+https://css-tricks.com/the-extend-concept/
+@extend
+
+https://www.bitdegree.org/learn/inline-css
+https://www.bitdegree.org/learn/storage/media/images/8c4493d3-110c-4a95-8b70-7626ce2d2f4e.jpg
+
+

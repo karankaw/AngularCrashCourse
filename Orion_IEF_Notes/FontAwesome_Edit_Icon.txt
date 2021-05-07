@@ -1,0 +1,24 @@
+f044 Unicode
+
+<i class="far fa-edit"></i>
+
+<i class="far fa-edit"></i>
+
+https://www.w3schools.com/icons/fontawesome_icons_intro.asp
+https://fontawesome.com/icons/edit?style=regular
+https://www.w3schools.com/icons/tryit.asp?filename=tryicons_awesome_intro_basic
+https://www.fontawesomecheatsheet.com/
+
+
+It downloads Unicode
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<i class="fa fa-edit"></i>
+<i class="fa fa-car" style="font-size:48px;"></i>
+<i class="fa fa-car" style="font-size:60px;color:red;"></i>
+
+
+<button class="btn"><i class="fa fa-home"></i> Home</button>
+<button class="btn"><i class="fa fa-bars"></i> Menu</button>
+<button class="btn"><i class="fa fa-trash"></i> Trash</button>
+<button class="btn"><i class="fa fa-close"></i> Close</button>
+<button class="btn"><i class="fa fa-folder"></i> Folder</button>

@@ -1,0 +1,13 @@
+https://code-trotter.com/web/understand-the-different-javascript-modules-formats/
+
+CJS ? AMD ? UMD ? ESM
+
+
+CommonJS (CJS) -  keywords: require and exports. The "module.exports" object is really specific to NodeJS.
+
+Asynchronous Module Definition (AMD) - Supports asynchronous module loading
+
+Universal Module Definition (UMD) - Complex (combination of CJS and AMD)
+
+ES2015 Modules (ESM) -  Keyword: import export
+As those 3 formats are not that easy to read, The ECMA team (the team behind the standardization of Javascript) decided to create the ECMAScript 2015 (also known as ES6) standard. This format is really simple to read and write and supports both synchronous and asynchronous modes of operation

@@ -1,0 +1,21 @@
+https://css-tricks.com/introduction-fr-css-unit/
+https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/
+https://www.digitalocean.com/community/tutorials/css-css-grid-layout-fr-unit
+https://www.hongkiat.com/blog/css-grid-layout-fr-unit/
+
+https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/
+https://digital.gov/guides/mobile-principles/viewport/
+
+https://www.w3schools.com/cssref/pr_grid-area.asp
+The grid-area property can also be used to assign a name to a grid item
+Named grid items can then be referenced to by the grid-template-areas property of the grid container.
+ 
+https://gridbyexample.com/examples/      [V V Imp]
+https://gridbyexample.com/patterns/header-twocol-footer-responsive/
+https://codepen.io/rachelandrew/pen/ZKaXGM?editors=1100
+
+
+https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/
+
+<link rel="stylesheet" type="text/css" href="theme.css">
+  <link rel="stylesheet" type="text/css" href="print.css" media="print">

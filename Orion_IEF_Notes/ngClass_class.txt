@@ -1,0 +1,16 @@
+Adding and removing classes with NgClass
+https://angular.io/guide/built-in-directives#adding-and-removing-classes-with-ngclass
+
+https://angular.io/guide/attribute-binding#binding-to-a-single-css-class
+Binding to a single CSS class
+To create a single class binding, use the prefix class followed by a dot and the name of the CSS class—for example, [class.sale]="onSale". Angular adds the class when the bound expression, onSale is truthy, and it removes the class when the expression is falsy—with the exception of undefined. See styling delegation for more information.
+
+https://angular.io/guide/attribute-binding#binding-to-multiple-css-classes
+Binding to multiple CSS classes
+To bind to multiple classes, use [class] set to an expression—for example, [class]="classExpression". The expression can be one of:
+
+A space-delimited string of class names.
+An object with class names as the keys and truthy or falsy expressions as the values.
+An array of class names.
+
+https://www.telerik.com/blogs/ng-class-ngclass#toc_7
