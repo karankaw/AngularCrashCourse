@@ -1,0 +1,29 @@
+HTML is the language of the Angular template. Almost all HTML syntax is valid template syntax. 
+Except the <script> tag, which is a notable exception; it is forbidden, eliminating the risk of script injection attacks.
+
+
+The HTML can pretty much be extended with "components" and "directives" which appear as  "new elements" and "new attributes".
+
+<h4>myClick is an event on the custom ClickDirective:</h4>
+<button (myClick)="clickMessage=$event" clickable>click with myClick</button>
+{{clickMessage}}
+If the target event name, myClick fails to match an element event or an output property of ClickDirective, Angular reports an "unknown directive" error.
+
+You can change the property of Component and do inline assignment
+
+(myClick)="clickMessage=$event" 
+or
+(myClick)="processClick()"
+
+processClick(event){
+clickMessage=$event;
+} 
+====================================================================
+
+<h4>myClick is an event on the custom ClickDirective:</h4>
+<button (myClick)="clickMessage=$event" clickable>click with myClick</button>
+{{clickMessage}}
+If the target event name, myClick fails to match an element event or an output property of ClickDirective, Angular reports an "unknown directive" error.
+
+p-fileUpload' is not a known element:
+1. If 'p-fileUpload' is an Angular component, then verify that it is part of this module.

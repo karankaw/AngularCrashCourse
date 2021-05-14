@@ -1,0 +1,5 @@
+https://www.w3schools.com/tags/att_a_target.asp
+
+target="_blank" --->  New Window / New Tab
+target="_self"    --->  Same Window(override)
+ 

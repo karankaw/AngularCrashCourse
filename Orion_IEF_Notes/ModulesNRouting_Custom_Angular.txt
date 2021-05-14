@@ -1,0 +1,10 @@
+Root Module - app
+New Modules 
+Modules have services,component, directive etc
+Module may have special module -> routingModule within it.
+https://www.smashingmagazine.com/2018/11/a-complete-guide-to-routing-in-angular/
+https://github.com/techiediaries/angular7-router-demo
+
+Each Module exports something and gets imported into another module.
+Module has an 'exports' property
+https://malcoded.com/posts/angular-fundamentals-modules/

@@ -1,0 +1,29 @@
+    ngOnChanges(changes: SimpleChanges): void {
+
+    console.log("Change CAPTURED!!")
+    for (const propName in changes) {
+      const changedProp = changes[propName];
+      console.log(`PopertyName: ${propName} 
+      Previous Value: ${changedProp.previousValue}  
+       NewValue: ${changedProp.currentValue}`)
+      console.log("-----------------------------")
+    }
+    this.fileUploader.clear();
+  }
+   
+  
+  <app-sizer [(size)]="fontSizePx"></app-sizer>
+  <app-sizer [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-sizer>
+  export class SizerComponent {
+
+  @Input()  size: number | string;
+  @Output() sizeChange = new EventEmitter<number>(); //Note that "Change" Suffix after the @InputName Convention
+
+  dec() { this.resize(-1); }
+  inc() { this.resize(+1); }
+
+  resize(delta: number) {
+    this.size = Math.min(40, Math.max(8, +this.size + delta));
+    this.sizeChange.emit(this.size);
+  }
+}

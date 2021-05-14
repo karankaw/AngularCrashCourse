@@ -1,0 +1,21 @@
+git tag -a <tag_name> HEAD -m "message"
+git push origin <tagname>
+
+git tag -a AfterCleanUp HEAD -m "Stable Code Running Locally after Modal"
+git push origin AfterCleanUp
+git tag -d tag_name
+ git tag -n
+
+
+https://git-scm.com/book/en/v2/Git-Basics-Tagging
+https://devconnected.com/how-to-create-git-tags
+https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/
+
+<input type="text" formControlName="name" maxlength="50" placeholder="Name" (input)="inputValidator($event)" required />
+
+public inputValidator(event: any) {
+    const pattern = /^[A-Za-z]+$/;   
+    if (!pattern.test(event.target.value)) {
+      event.target.value = event.target.value.replace(/[^a-zA-Z]/g, "");
+      }
+  }

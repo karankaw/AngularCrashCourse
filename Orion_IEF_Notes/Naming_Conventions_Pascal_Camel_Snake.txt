@@ -1,0 +1,7 @@
+https://devrant.com/rants/2200148/pascalcase-for-life-what-about-you
+
+camelCase (1st Letter Not Capitalized )
+
+PascalCase (1st Letter Capitalized )
+
+snake_case (lower case and joined by underscore)
