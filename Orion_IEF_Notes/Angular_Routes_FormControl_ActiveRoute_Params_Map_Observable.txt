@@ -1,0 +1,123 @@
+https://stackoverflow.com/questions/37965647/hostbinding-and-hostlistener-what-do-they-do-and-what-are-they-for
+
+hostbinding-and-hostlistener
+
+-----------------------------------------------------------------------------------------------------
+https://blog.knoldus.com/different-types-of-component-selectors-in-angular/
+-----------------------------------------------------------------------------------------------------
+https://angular.io/api/core/Directive
+You can declare components, directives, and pipes.
+Directives are declarables. 
+They must be declared by an NgModule in order to be usable in an app.
+
+A directive must belong to exactly one NgModule. Do not re-declare a directive imported from another module. List the directive class in the declarations field of an NgModule.
+
+declarations: [
+ AppComponent,
+ MyDirective
+],
+-----------------------------------------------------------------------------------------------------
+Web Workers
+-----------------------------------------------------------------------------------------------------
+Angular Universal
+-----------------------------------------------------------------------------------------------------
+Angular Elements
+Helps to use Angular components in non-Angular environments.
+------------------------------------------------------------------------------------------------------
+You declare it either in your NgModule or in a specific component 
+	simply by adding providers: [MyService] to your configuration metadata.
+	
+------------------------------------------------------------------------------------------------------
+@Input Name
+@Output NameChange    //   Note this "change"Suffix
+------------------------------------------------------------------------------------------------------
+@Injectable({
+providedIn:'root'
+}
+providedIn:AppModule
+
+providers in - Component or NgModule
+------------------------------------------------------------------------------------------------------
+@Component({
+  selector: 'import-project, app-upload-documents',
+  templateUrl: './importProject.component.html',
+  styleUrls: ['./importProject.component.css'],
+  providers: [MessageService]
+})
+export class ImportProjectComponent implements OnInit, OnDestroy, OnChanges {
+https://stackoverflow.com/questions/39414074/how-to-define-an-angular-2-component-or-directive-with-multiple-selectors
+-----------------------------------------------------------------------------------------------------
+
+https://forum.primefaces.org/viewtopic.php?t=29582
+I solved with using [multiple]="false" instead of multiple="false"
+-----------------------------------------------------------------------------------------------------
+.p-field *{
+    display: block;
+}
+All Children of ClassSelector p-field
+-----------------------------------------------------------------------------------------------------
+<input size="number">
+number	Specifies the width of an <input> element, in characters. Default value is 20
+
+https://www.w3schools.com/tags/att_input_size.asp
+-----------------------------------------------------------------------------------------------------
+https://medium.com/claritydesignsystem/making-full-use-of-angular-providers-part-1-14609a09514b
+
+-----------------------------------------------------------------------------------------------------
+<input type="text" formControlName="name" maxlength="50" placeholder="Name" (input)="inputValidator($event)" required />
+
+public inputValidator(event: any) {
+    const pattern = /^[A-Za-z]+$/;   
+    if (!pattern.test(event.target.value)) {
+      event.target.value = event.target.value.replace(/[^a-zA-Z]/g, "");
+      }
+  }
+  -----------------------------------------------------------------------------------------------------
+  
+  https://stackoverflow.com/questions/1213101/css-question-transparent-underlined-textbox-howto
+  input.myBox
+{
+    border: 0px solid #000000;
+    border-bottom-width: 1px;
+    background-color: transparent;
+}
+-----------------------------------------------------------------------------------------------------
+FORMS in Angular 
+-----------------------------------------------------------------------------------------------------
+ <p-accordionTab *ngFor="let project of projectDetails; index as rowIndex" 
+ -----------------------------------------------------------------------------------------------------
+ ngModel -> Template FORMS
+ formControl -> Reactive FORMS
+ Validations ???
+ --------------------------------------------------------------------------------------------------
+ Banana in a Box  [()]
+---------------------------------------------------------------------------------------------------
+<app-upload-documents-modal [modalWindowVisible]="displayUploadDocuments"  (modalWindowVisibleChange)="displayUploadDocuments=$event">
+</app-upload-documents-modal>
+
+<app-upload-documents-modal [(modalWindowVisible)]="displayUploadDocuments" >  
+</app-upload-documents-modal>
+
+
+modalWindowVisible -  inside child component
+modalWindowVisibleChange - inside child component 
+displayUploadDocuments - inside parent
+$event - inside child component
+----------------------------------------------------------------------------------------------------
+Favorite Color: <input type="text" [formControl]="favoriteColorControl">  --  [formControl] is attribute selector for directive FormControlDirective
+
+Favorite Color: <input type="text" [(ngModel)]="favoriteColor"> -- ngModel is a attribute selector
+
+-----------------------------------------------5 Bros-----------------------------------------------------
+<img [src]="itemImageUrl">
+
+<button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+
+<app-sizer [size]="fontSizePx"></app-sizer>    
+
+<div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
+
+<input type="text" [formControl]="favoriteColorControl">
+
+<input type="text" [(ngModel)]="favoriteColor">
+----------------------------------------------------------------------------------------------------
