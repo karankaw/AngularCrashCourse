@@ -108,16 +108,52 @@ Favorite Color: <input type="text" [formControl]="favoriteColorControl">  --  [f
 
 Favorite Color: <input type="text" [(ngModel)]="favoriteColor"> -- ngModel is a attribute selector
 
------------------------------------------------5 Bros-----------------------------------------------------
-<img [src]="itemImageUrl">
+-----------------------------------------------7 Bros-----------------------------------------------------
+<img [src]="itemImageUrl">                   ---> Property Binding for HTML DOM
 
-<button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+<button [attr.aria-label]="actionName">{{actionName}} with Aria</button> ---> Attribute Binding for HTML DOM
 
-<app-sizer [size]="fontSizePx"></app-sizer>    
+<app-sizer [size]="fontSizePx"></app-sizer>    ---> @Input Binding / Parent Model to  Child Model/Child View
 
-<div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
+<div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>   ---> Directive in HTML DOM element
 
-<input type="text" [formControl]="favoriteColorControl">
+<input type="text" [formControl]="favoriteColorControl"> --->   Directive in HTML DOM element
 
-<input type="text" [(ngModel)]="favoriteColor">
-----------------------------------------------------------------------------------------------------
+<input type="text" [(ngModel)]="favoriteColor"> --->  Directive in HTML DOM element
+
+<p [appHighlight]="color">Highlight me!</p>  ---> Custom-Made  Directive in HTML DOM element
+
+----------------------------------------------------------------------------------------------------------
+<nav>
+  <ul>
+    <li><a routerLink="/first-component" routerLinkActive="active">First Component</a></li>
+    <li><a routerLink="/second-component" routerLinkActive="active">Second Component</a></li>
+  </ul>
+</nav>
+
+<a [routerLink]="['/heroes']">Heroes</a> --- Binding routerLink to Array[]
+
+See [] on and off - attribute Directives
+without [] means - not to be evaluated
+----------------------------------------------------------------------------------------------------------
+Route Order
+Wild Card  { path: '**', component:  }
+{ path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
+
+ ActivatedRoute by adding it to your application's constructor:
+
+--------------------------------------------REDIRECT------------------------------------------------
+const routes: Routes = [
+  { path: 'first-component', component: FirstComponent },
+  { path: 'second-component', component: SecondComponent },
+  { path: '',   redirectTo: '/first-component', pathMatch: 'full' }, // redirect to `first-component`
+  { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
+];
+----------------------------------------------------------------------------------------------------------
+
+https://angular.io/guide/router#preventing-unauthorized-access
+
+Route Guard
+https://angular.io/guide/router-tutorial-toh#milestone-5-route-guards
+--------------------------------------------------------------------------------------------------------
+

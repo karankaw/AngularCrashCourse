@@ -1,0 +1,28 @@
+An outline is a line drawn outside the element's border.
+
+https://www.w3schools.com/css/css_outline.asp
+
+CSS has the following outline properties:
+
+outline-style
+outline-color
+outline-width
+outline-offset
+outline
+-----------------------------------------------------------------------
+*:focus {
+    outline: none;
+}
+
+-----------------------------------------------------------------------
+not
+The :not(selector) selector matches every element that is NOT the specified element/selector.
+https://www.w3schools.com/cssref/sel_not.asp
+https://css-playground.com/view/33/css-pseudo-classes-playground
+-----------------------------------------------------------------------
+.upload-id-style{
+    border: 0px solid #000000;
+    border-bottom-width: 1px;
+    background-color: transparent;
+    border-radius: 0;
+}
