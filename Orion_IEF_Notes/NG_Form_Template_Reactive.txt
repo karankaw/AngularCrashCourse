@@ -1,0 +1,17 @@
+    <form #templVar="ngForm" > 
+	<input type="text" name="uploadID" class="p-inputtext-md upload-id-style" placeholder="Enter Upload Id*" pInputText 
+     [(ngModel)]="uploadID" style="margin-bottom: 1rem;" size="50"  required/>
+   
+    <input type="text" name="helloWorld" class="p-inputtext-md upload-id-style" placeholder="Hello World" pInputText 
+     [(ngModel)]="helloWorld" style="margin-bottom: 1rem;" size="50"/>
+	
+{{templVar.value|json}}
+
+
+The control has been vistited 	ng-touched 			ng-untouched 
+The Control has changed           ng-dirty                 ng-pristine 
+The Control's value is valid        ng-valid                 ng-valid       
+
+
+
+

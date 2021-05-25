@@ -1,0 +1,19 @@
+https://www.geeksforgeeks.org/how-to-print-a-circular-structure-in-a-json-like-format-using-javascript/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+https://stackoverflow.com/questions/27101240/typeerror-converting-circular-structure-to-json-in-nodejs
+
+
+https://stackoverflow.com/questions/53472222/angular-validation-messages-appears-after-reset-form
+this.templVar.reset();
+
+https://stackoverflow.com/questions/38648407/angular2-error-there-is-no-directive-with-exportas-set-to-ngform/53891738#53891738
+<input #myComponent="ngModel" [(ngModel)]="myvar" />
+
+<h1>Angular Router App</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/first-component" routerLinkActive="active">First Component</a></li>
+    <li><a routerLink="/second-component" routerLinkActive="active">Second Component</a></li>
+  </ul>
+</nav>

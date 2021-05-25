@@ -1,0 +1,39 @@
+<ul >
+	<li *ngFor="let department of departments" (click)="onSelect(department)">
+</ul>
+
+import {Router, ActivatedRoute, ParamMap} from @angular/router;
+
+class DepartmentList{
+    constructor(router:Router){
+	}
+	onSelect(department){
+    this.router.navigate(['/departments',department.id])
+	}
+}
+
+app-routing.module.ts
+path:"/department/:id", component:"DepartmentDetailComponent"
+//id is a placeholder service
+
+department-detail.component.ts
+
+class DepartmentDetailComponent {
+	
+	public departmentId : 
+
+	constructor(private route : ActivatedRoute){
+	}
+	
+	onInit(){
+	//	this.departmentId = this.route.snapshot.paramMap.get('id'));
+		this.route.subscribe(
+		params : ParamMap => {
+			let id =  parseInt(params.get(id));
+			this.departmentId = id;
+		}		
+		)
+	}
+}
+
+https://www.youtube.com/watch?v=KRV9jZwl0Ig&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=25
